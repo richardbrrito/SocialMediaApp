@@ -14,7 +14,7 @@
 2. ⚙️ [Tech Stack](#tech-stack)
 3. 🔋 [Features](#features)
 4. 🤸 [Quick Start](#quick-start)
-5. 🕸️ [Snippets](#snippets)
+
 
 
 ## <a name="tech-stack">⚙️ Tech Stack</a>
@@ -95,9 +95,3 @@ npm start
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser to view the project.
-
-## <a name="snippets">🕸️ Snippets</a>
-
-<details>
-<summary><code>constants.index.ts</code></summary>
-
