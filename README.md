@@ -6,7 +6,7 @@
     <img src="https://img.shields.io/badge/-Typescript-black?style=for-the-badge&logoColor=white&logo=typescript&color=3178C6" alt="typescript" />
   </div>
 
-  <h3 align="center">A Social Media Application</h3>
+  <h1 align="center">A Social Media Application</h1>
 </div>
 
 ## 📋 <a name="table">Table of Contents</a>
