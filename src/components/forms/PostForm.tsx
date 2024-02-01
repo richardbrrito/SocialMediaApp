@@ -62,7 +62,7 @@ const PostForm = ({ post, action }: PostFormProps) => {
         toast({title: 'Please try again'})
       }
       console.log(post.$id)
-      return navigate(`/post/${post.$id}`)
+      return navigate(`/posts/${post.$id}`)
     }
 
 
