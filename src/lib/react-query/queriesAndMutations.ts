@@ -4,8 +4,8 @@ import {
     useQueryClient,
     useInfiniteQuery,
 } from '@tanstack/react-query'
-import { createPost, createUserAccount, deleteSavedPost, getRecentPosts, likePost, savePost, signInAccount, signOutAccount, getCurrentUser, getPostById, updatePost, deletePost, getInfinitePosts, searchPosts, getUsers, getUserById } from '../appwrite/api'
-import { INewPost, INewUser, IUpdatePost } from '@/types'
+import { createPost, createUserAccount, deleteSavedPost, getRecentPosts, likePost, savePost, signInAccount, signOutAccount, getCurrentUser, getPostById, updatePost, deletePost, getInfinitePosts, searchPosts, getUsers, getUserById, updateUser } from '../appwrite/api'
+import { INewPost, INewUser, IUpdatePost, IUpdateUser } from '@/types'
 import { CreatePost } from '@/_root/pages'
 import { QUERY_KEYS } from './queryKeys'
 import { appwriteConfig, databases, storage } from '../appwrite/config'
@@ -192,3 +192,18 @@ export const useGetUsers = (limit?: number) => {
       enabled: !!userId,
     });
 }
+
+export const useUpdateUser = () => {
+    const queryClient = useQueryClient();
+    return useMutation({
+      mutationFn: (user: IUpdateUser) => updateUser(user),
+      onSuccess: (data) => {
+        queryClient.invalidateQueries({
+          queryKey: [QUERY_KEYS.GET_CURRENT_USER],
+        });
+        queryClient.invalidateQueries({
+          queryKey: [QUERY_KEYS.GET_USER_BY_ID, data?.$id],
+        });
+      },
+    });
+  };
